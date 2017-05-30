@@ -6,6 +6,7 @@ import xyz.z3ntu.weightmanager_server.domain.WeightData;
 import xyz.z3ntu.weightmanager_server.persistence.WeightDataRepository;
 
 import javax.annotation.PostConstruct;
+import java.util.Calendar;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -21,6 +22,6 @@ public class InitializationService {
     }
 
     private WeightData weightData(int number) {
-        return WeightData.builder().content("Content " + number).build();
+        return WeightData.builder().date(Calendar.getInstance().getTime()).weight(number).build();
     }
 }

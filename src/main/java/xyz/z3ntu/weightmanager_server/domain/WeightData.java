@@ -11,7 +11,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.Version;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import java.util.Date;
 
 @Data
 @NoArgsConstructor
@@ -25,7 +25,10 @@ public class WeightData extends AbstractPersistable<Long> {
     private Long version;
 
     @NotNull
-    @Size(min = 5, max = 4096)
-    @Column(name = "content", nullable = false)
-    private String content;
+    @Column(name = "date", nullable = false)
+    private Date date;
+
+    @NotNull
+    @Column(name = "weight", nullable = false)
+    private Integer weight;
 }

@@ -35,7 +35,8 @@ public class WeightDataService {
     public void updateWeightData(Long id, final WeightData weightData) {
         Optional<WeightData> existingWeightData = weightDataRepository.findById(id);
         existingWeightData.ifPresent(wd -> {
-            wd.setContent(weightData.getContent());
+            wd.setDate(weightData.getDate());
+            wd.setWeight(weightData.getWeight());
             weightDataRepository.save(wd);
         });
 
